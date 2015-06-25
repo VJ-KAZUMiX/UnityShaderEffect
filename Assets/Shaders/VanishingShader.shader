@@ -73,7 +73,7 @@
 				float4 frag(v2f IN) : COLOR {
 					float2 uv = IN.uv_MainTex;
 					
-					float baseLine = 1.0 - (1.0 + _FadeLength) * _ProgressValue;
+					float baseLine = 1.0 - (1.0 + _FadeLength / 5) * _ProgressValue;
 					float y = uv.y - baseLine;
 					float delta = _FadeLength - y;
 					
@@ -93,7 +93,7 @@
 							y = y * 0.8;
 							uv.y -= y;
 							// 斜め
-							uv.x += y / _FadeLength * -0.05;
+							//uv.x += y / _FadeLength * -0.05;
 							
 							alpha = delta / _FadeLength;
 						}

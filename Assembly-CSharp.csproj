@@ -47,6 +47,8 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\EffectCtrl.cs" />
+     <Compile Include="Assets\Scripts\EffectSceneManager.cs" />
+     <None Include="Assets\Shaders\ChaosShader.shader" />
      <None Include="Assets\Shaders\VanishingShader.shader" />
      <None Include="Assets\Shaders\SinRasterShader.shader" />
  <Reference Include="UnityEngine.UI">

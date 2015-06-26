@@ -4,32 +4,46 @@ using System.Collections;
 
 public class EffectCtrl : MonoBehaviour {
 
+	public class EffectInfo
+	{
+		public EffectInfo (Material effectMaterial, float effectDuration, float waitDuration)
+		{
+			this.effectMaterial = effectMaterial;
+			this.effectDuration = effectDuration;
+			this.waitDuration = waitDuration;
+		}
+
+		public Material effectMaterial;
+		public float effectDuration;
+		public float waitDuration;
+	}
+
+	private EffectInfo effectInto;
+
 	[SerializeField]
 	private RawImage rawImage;
 
 	private float timer;
-
-	private float effectDuration;
-	private float waitDuration;
 
 	private Coroutine currentEffectCoroutine = null;
 
 	// Use this for initialization
 	void Start ()
 	{
-		startEffect (5, 0.5f);
+		rawImage.material.SetFloat ("_ProgressValue", 0.0f);
 	}
 
-	public void startEffect (float effectDuration, float waitDuration)
+	public void startEffect (EffectInfo effectInfo)
 	{
 		if (currentEffectCoroutine != null) {
 			StopCoroutine (currentEffectCoroutine);
 			currentEffectCoroutine = null;
 		}
+		if (effectInfo.effectMaterial != null) {
+			rawImage.material = effectInfo.effectMaterial;
+		}
 
-		this.effectDuration = effectDuration;
-		this.waitDuration = waitDuration;
-
+		this.effectInto = effectInfo;
 		currentEffectCoroutine = StartCoroutine (effectCoroutine ());
 	}
 
@@ -37,29 +51,29 @@ public class EffectCtrl : MonoBehaviour {
 	{
 		while (true) {
 			timer = 0;
-			while (timer < effectDuration) {
-				rawImage.material.SetFloat ("_ProgressValue", timer / effectDuration);
+			while (timer < effectInto.effectDuration) {
+				rawImage.material.SetFloat ("_ProgressValue", timer / effectInto.effectDuration);
 				timer += Time.deltaTime;
 				yield return null;
 			}
 			rawImage.material.SetFloat ("_ProgressValue", 1.0f);
 			
 			timer = 0;
-			while (timer < waitDuration) {
+			while (timer < effectInto.waitDuration) {
 				timer += Time.deltaTime;
 				yield return null;
 			}
 			
 			timer = 0;
-			while (timer < effectDuration) {
-				rawImage.material.SetFloat ("_ProgressValue", 1.0f - timer / effectDuration);
+			while (timer < effectInto.effectDuration) {
+				rawImage.material.SetFloat ("_ProgressValue", 1.0f - timer / effectInto.effectDuration);
 				timer += Time.deltaTime;
 				yield return null;
 			}
 			rawImage.material.SetFloat ("_ProgressValue", 0.0f);
 
 			timer = 0;
-			while (timer < waitDuration) {
+			while (timer < effectInto.waitDuration) {
 				timer += Time.deltaTime;
 				yield return null;
 			}

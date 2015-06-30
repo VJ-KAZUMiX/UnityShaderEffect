@@ -47,6 +47,15 @@ public class EffectCtrl : MonoBehaviour {
 		currentEffectCoroutine = StartCoroutine (effectCoroutine ());
 	}
 
+	public void stopAndReset ()
+	{
+		if (currentEffectCoroutine != null) {
+			StopCoroutine (currentEffectCoroutine);
+			currentEffectCoroutine = null;
+		}
+		rawImage.material.SetFloat ("_ProgressValue", 0.0f);
+	}
+
 	private IEnumerator effectCoroutine ()
 	{
 		while (true) {

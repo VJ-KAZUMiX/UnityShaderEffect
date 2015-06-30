@@ -49,8 +49,10 @@
      <Compile Include="Assets\Scripts\EffectCtrl.cs" />
      <Compile Include="Assets\Scripts\EffectSceneManager.cs" />
      <None Include="Assets\Shaders\ChaosShader.shader" />
-     <None Include="Assets\Shaders\VanishingShader.shader" />
-     <None Include="Assets\Shaders\SinRasterShader.shader" />
+     <None Include="Assets\Shaders\forBG\NoiseShader.shader" />
+     <None Include="Assets\Shaders\forLogo\VanishingShader.shader" />
+     <None Include="Assets\Shaders\forLogo\SinRasterShader.shader" />
+     <None Include="Assets\Shaders\forBG\CircleLightShader.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity5/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

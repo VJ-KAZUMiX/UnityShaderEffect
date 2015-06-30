@@ -13,6 +13,12 @@ public class EffectSceneManager : MonoBehaviour
 
 	private EffectCtrl.EffectInfo[] effectInfos;
 
+	[SerializeField]
+	private RawImage rawImageBG;
+
+	[SerializeField]
+	private Material[] bgEffectMaterials;
+
 	// Use this for initialization
 	void Start ()
 	{
@@ -24,6 +30,20 @@ public class EffectSceneManager : MonoBehaviour
 
 	public void toggleEffectClickHandler (int index)
 	{
-		effectCtrl.startEffect (effectInfos[index]);
+		if (index < 0 || index >= effectInfos.Length) {
+			effectCtrl.stopAndReset ();
+		} else {
+			effectCtrl.startEffect (effectInfos[index]);
+		}
+	}
+
+	public void toggleBGEffectClickHandler (int index)
+	{
+		if (index < 0 || index >= bgEffectMaterials.Length) {
+			rawImageBG.gameObject.SetActive (false);
+		} else {
+			rawImageBG.gameObject.SetActive (true);
+			rawImageBG.material = bgEffectMaterials[index];
+		}
 	}
 }

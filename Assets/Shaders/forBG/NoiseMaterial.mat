@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: VanishingMaterial
-  m_Shader: {fileID: 4800000, guid: 98dabe9705a793d4a876d91b29f6550c, type: 3}
+  m_Name: NoiseMaterial
+  m_Shader: {fileID: 4800000, guid: a0dfded679a4aa14dab12a8b02e5bac8, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_CustomRenderQueue: -1
@@ -127,18 +127,6 @@ Material:
         first:
           name: _Metallic
         second: 0
-      data:
-        first:
-          name: _ProgressValue
-        second: 0
-      data:
-        first:
-          name: _FadeLength
-        second: .400000006
-      data:
-        first:
-          name: _ShakeLength
-        second: .00499999989
     m_Colors:
       data:
         first:

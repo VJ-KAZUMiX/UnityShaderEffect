@@ -1,11 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Shaders\ChaosShader.shader">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Shaders\forBG\NoiseShader.shader">
     <Files>
-      <File FileName="Assets\Shaders\VanishingShader.shader" Line="33" Column="6" />
-      <File FileName="Assets\Scripts\EffectCtrl.cs" Line="25" Column="1" />
-      <File FileName="Assets\Scripts\EffectSceneManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Shaders\ChaosShader.shader" Line="49" Column="50" />
+      <File FileName="Assets\Scripts\EffectCtrl.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\EffectSceneManager.cs" Line="34" Column="31" />
+      <File FileName="Assets\Shaders\ChaosShader.shader" Line="138" Column="1" />
+      <File FileName="Assets\Shaders\forBG\CircleLightShader.shader" Line="32" Column="45" />
+      <File FileName="Assets\Shaders\forLogo\SinRasterShader.shader" Line="1" Column="1" />
+      <File FileName="Assets\Shaders\forBG\NoiseShader.shader" Line="39" Column="30" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
